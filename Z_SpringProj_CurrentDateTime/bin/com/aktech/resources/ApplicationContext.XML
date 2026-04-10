@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Create LocalDate object -->
+    <bean id="currentDate" class="java.time.LocalDate" factory-method="now"/>
+
+    <!-- Inject into DatePrinter -->
+    <bean id="datePrinter" class="com.aktech.bean.DatePrinter">
+        <constructor-arg ref="currentDate"/>
+    </bean>
+
+</beans>

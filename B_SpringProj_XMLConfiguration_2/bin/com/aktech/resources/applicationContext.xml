@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="discountCalculator" class="com.aktech.app.DiscountCalculator">
+        <constructor-arg>
+            <!-- Use LocalDate.parse to convert string to LocalDate -->
+            <bean class="java.time.LocalDate" factory-method="parse">
+                <constructor-arg value="2026-04-06"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg value="100"/>
+    </bean>
+
+</beans>
